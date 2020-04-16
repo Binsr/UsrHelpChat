@@ -66,7 +66,7 @@ export default {
     height: 5vh;
     color: rgb(146, 83, 1);
     font-size: 20px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 254);
     border-width: 0;
     border-bottom-right-radius: 20px; 
     position: fixed;
