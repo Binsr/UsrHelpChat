@@ -2,14 +2,13 @@
 <div class="background">
   <div class="tatkoNaMafiu">
     <div class="physicallyBodyOfHeader">
-      <div class="chatIcon"></div>
+      <div class="chatIcon2"></div>
     </div>
     <div class="headChat">
       <div class="topHead">
         <div class="chatIcon"></div>
         <div class="roomWrap">
-          <p class="roomName">F-S area: {{client.name}}</p>
-          <p class="botHead">Number of users online: {{client.number}}</p>
+          <p class="roomName">Some company chat room</p>
         </div>
       </div>
     </div>
@@ -37,7 +36,6 @@
     </div>
     <div class="inputOMEGAWrap">
       <div class="inputWrap">
-        <div @click="insertDocument" class="content"></div>
         <input  type="text" v-model="myMessage" @keyup.enter="submit" @keyup="showIcon" @focus="scrollToEnd">
         <div @click="submit" class="sendBtnWrap">
             <button @click="submit" class="btn_icon"></button>
@@ -45,21 +43,7 @@
       </div>
     </div>
   </div>
-  <div class="contentWraper">
-    <ul>
-      <li @click="getContent">Camera</li>
-      <li>Photo & Video Library</li>
-      <li @click="chooseDocument">Document</li>
-      <li class="secret"><input type="file" name="document" multiple accept="image/*"></li>
-    </ul>
-    <div class="triangle">
-    </div>
   </div>
-  <div class="videoWrapper secret">
-    <video src="" autoplay class="video">
-    </video>
-  </div>
-</div>
 </template>
 
 <script>
@@ -259,6 +243,7 @@ export default {
 }
 div.singleMessageDiv.my-message{
     justify-content: flex-end;
+    margin-right: 25vw;
 }
 .invis{
     visibility: hidden;
@@ -267,13 +252,13 @@ div.singleMessageDiv.my-message{
 .singleMessageDiv{
     display: flex;
     justify-content: flex-start;
+    margin-left: 25vw;
 }
 div.singleMessageDiv.my-message .wrapLine .Message{
     background-color:rgb(255, 248, 248);
 }
 div.singleMessageDiv.new-user .wrapLine .Message{
     background-color: rgba(0, 253, 34, 0);
-    width: 100%;
     color:rgb(255, 255, 255);
     box-shadow: none;
     font-size: 15px;
@@ -284,6 +269,8 @@ div.singleMessageDiv.new-user .wrapLine .timeWrap{
 }
 
 div.singleMessageDiv.new-user{
+    width: 50vw;
+    margin-left: 25vw;
     justify-content: center;
     background-color: rgba(0, 253, 34, 0.267);
 }
@@ -309,46 +296,53 @@ body{
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(53, 53, 53, 0.753);
     align-self: flex-start;
     margin: 10px 0 10px 10px;
-    background-image: url("../assets/avatarce.png");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
+.chatIcon2{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    align-self: flex-start;
+    margin: 10px 0 10px 10px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
 .headChat{
     position: fixed;
     z-index: 1;
     border-style:solid;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    background-color: rgb(255, 255, 255);
+    width: 50vw;
+    background-color: rgba(65, 62, 62, 0.63);
     border-color: rgb(92, 0, 0);
-    border-width: 0 0 2px 0;
+    border-width: 1.5px;
+    margin-left: 25vw;
+    margin-bottom: 10vw;
 }
-.physicallyBodyOfHeader{
-    opacity: 0;
-    border-bottom-width: 0px;
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    border-width: 0px;
-    /* background-color: #B71C1C; */
-}
+
 .topHead{
     display: flex;
     align-items: flex-start;
+    margin: 0 auto;
 }
 .botHead{
+    margin: 0 auto;
     color: rgb(48, 48, 48);
     font-size: 10px;
     margin: 0 0 5px 0;
 }
 .roomName{
     font-size: 10px;
-    color: rgb(48, 48, 48);
+    color: #f8c262;
     font-size: 20px;
     margin: 17px 0 5px 0px;
 }
@@ -362,19 +356,23 @@ body{
 .inputOMEGAWrap{
     position: fixed;
     bottom: 10px;
-    width: 100vw;
+    width: 50vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 25vw;
 }
 .inputWrap{
-    background-color: #F7E7CE;
+    background-color: rgba(87, 80, 80, 0.829);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 30px;
+    border-radius: 10px;
     /* height: 5vh; */
     width: 90vw;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #f8c262;
 }
 .inputWrap input{
     display: block;
@@ -384,8 +382,10 @@ body{
     padding: 0 5px;
     font-size: 14px;
     border-width: 0;
-    background-color: #F7E7CE;
+    background-color: rgba(87, 80, 80, 0);
+    color: #f8c262;
 }
+
 .sendBtnWrap{
     width: 35px;
     height: 35px;
@@ -439,6 +439,7 @@ body{
   display: inline-block;
   color: white;
   height: 80vh;
+  margin-top:2vh;
 }
 .ChatWindow{
   position: relative;
@@ -529,10 +530,20 @@ body{
 }
 /*------------------------------------------------------------------------------*/
 .background{
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  border-style: solid; 
+  border-color: white;
+  background-image: url('./../assets/bak6.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow:hidden;
+
   display: block;
   height: 100%;
   width: 100vw;
-  background-image: url('../assets/coldwarm.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

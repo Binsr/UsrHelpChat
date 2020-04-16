@@ -4,7 +4,7 @@
             <div class="title">
                 <div class="titleFSpart">Live info chat</div>
             </div>
-            <div class="note">There will always be someone online to answer your questions!</div>
+            <div class="note">Some text about company!</div>
             <div class="inputContainer">
                 <div class="input">
                     <input type="text" v-model="name" @keyup.enter="submitName" placeholder="Enter your name please">

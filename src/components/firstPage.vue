@@ -6,7 +6,9 @@
           <div class="term-text">
             <p>Some shit people need to accept</p>
           </div>
-          <button class="chatBtn" @click="toChatPage"><p class="btParagraf" id="clickme">Accept</p></button>
+          <div class="chatBtnContainer">
+            <button class="chatBtn" @click="toChatPage"><p class="btParagraf" id="clickme">Accept</p></button>
+          </div>
         </div>
   </div>
 </template>
@@ -23,20 +25,6 @@ export default {
     },
     data() {
       return{
-        caffeApi:true,
-        caffeNames: "",
-        showCaffeList: false,
-        interval:null,
-        images:
-        [{"slika":"www.yorkshireeveningpost.co.uk/images-a.jpimedia.uk/imagefetch/http://www.lep.co.uk/webimage/1.9969596!image/image",
-          "tag":"#Beograd #VeseliKafe"},
-          {"slika":"www.officelovin.com/wp-content/uploads/2014/10/google-campus-tel-aviv-h2",
-          "tag":"#Nis #BeerRes"},
-          {"slika":"alwayshungry.ph/wp-content/uploads/2016/10/8be33d0f41db2eae6ac5d316c8bba8e2_1475770150",
-          "tag":"#Zajecar #KafeCaffe"},
-          {"slika":"www.cafesunflower.com/wp-content/uploads/2015/07/Buckhead-Main-Dining-Room-01",
-          "tag":"#Pozarevac #BluePlace"}
-        ]
       }
     },
     methods: {
@@ -126,6 +114,12 @@ export default {
   position: absolute;
   bottom: 0;
   border-width: 0;
+}
+.chatBtnContainer{
+  display: flex;
+}
+.chatBtnContainer :hover{
+  background-color: rgb(0, 0, 0);
 }
 
 
