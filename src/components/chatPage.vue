@@ -272,11 +272,12 @@ div.singleMessageDiv.my-message .wrapLine .Message{
     background-color:rgb(255, 248, 248);
 }
 div.singleMessageDiv.new-user .wrapLine .Message{
-    background-color: rgba(253, 0, 0, 0);
+    background-color: rgba(0, 253, 34, 0);
     width: 100%;
     color:rgb(255, 255, 255);
-    box-shadow: 0 0;
+    box-shadow: none;
     font-size: 15px;
+    border-width: 0;
 }
 div.singleMessageDiv.new-user .wrapLine .timeWrap{
     color:white;
@@ -284,6 +285,7 @@ div.singleMessageDiv.new-user .wrapLine .timeWrap{
 
 div.singleMessageDiv.new-user{
     justify-content: center;
+    background-color: rgba(0, 253, 34, 0.267);
 }
 
 div.singleMessageDiv.new-user .timeWrap{

@@ -1,22 +1,21 @@
 <template>
     <div class="popupContainer">
-        <div class="sheepLogo">
-          <img src="../assets/mainlogo.jpg"/>
-        </div>
-        <div class="title">
-            <div class="titleFSpart">Live help center</div>
-          <div class="areaPart">App</div>
-        </div>
-      <div>
-          <div class="inputContainer">
-            <div class="input">
-                    <input type="text" v-model="name" @keyup.enter="submitName" placeholder="~~~Ime~~~">
+        <div class="log-container">
+            <div class="title">
+                <div class="titleFSpart">Live info chat</div>
             </div>
-            <div class="btnOkContainer">
-                <button @click="submitName">Login</button>
+            <div class="note">There will always be someone online to answer your questions!</div>
+            <div class="inputContainer">
+                <div class="input">
+                    <input type="text" v-model="name" @keyup.enter="submitName" placeholder="Enter your name please">
+                </div>
+                <div class="btnOkContainer">
+                    <button @click="submitName">
+                        <div class="login" >Login</div>
+                    </button>
+                </div>
             </div>
-          </div>
-      </div>
+        </div>
     </div>
 </template>
 <script>
@@ -78,24 +77,22 @@ export default {
     background-color: white;
     border-style: solid; 
     border-color: white;
+    background-image: url('./../assets/bak.jpg');
 }
-.sheepLogo{
+.log-container{
+    display: flex;
+    width: 40%;
+    min-width: 300px;
     margin: 0 auto;
-    width: 100vw;
-    background-color: rgb(179, 77, 29);
-}
-.sheepLogo img{
-    margin: 0 auto;
-    border-width: 20px;
+    margin-top: 13%;
+    flex-direction: column;
+    background-color: #000000a8;
+    box-shadow: 1px 1px rgb(100, 100, 100);
+    border-width: 1px;
     border-style: solid;
-    border-color: black;
-    border-radius: 50%;
+    border-color: #f8c262;
 }
 
-.titleFSpart{
-  color: rgb(167, 167, 167);
-  text-shadow: 2px 2px #fff;
-}
 
 /* TITLE EDIT PART
 ------------------------------------*/
@@ -103,77 +100,88 @@ export default {
 .title {
     display: flex;
     text-align: center;
-    font-size: 10vw;
+    font-size: 6vw;
     margin: 0 auto;
     flex-direction: column;
+    margin-top: 3vh;
+    color:#f8c262;
 }
 
 .titleFSpart {
-  color: rgb(121, 121, 121);
   letter-spacing: 3px;
-  font-family: "Bangers", cursive;
-  text-shadow: 2px 2px black;
+  font-size: 40px;
 }
 .areaPart {
   color: rgb(255, 255, 255);
   text-shadow: 2px 2px rgb(255, 255, 255);
 }
 
-.wifiContainer{
-    display: flex;
-    width: 100vw;
-}
-.writingTextContainter{
-    transform: rotate(10deg);
-    color:white;
-}
 
 /* ----------------------------------*/
 .inputContainer{
+    margin-top: 2vh;
     display:flex;
-    width: 100vw;
-    position: absolute;
-    bottom: 0%;
     flex-direction: column;
     margin-bottom: 2vh;
 }
 .input{
     margin: 0 auto;
+    margin-top: 4vh;
 }
 .input input{
-    width: 40vw;
+    width: 30vw;
     height: 6vh;
-    background-color: rgb(158, 147, 147);
-    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.288);
+    border-radius: 5px;
     text-align: center;   
-    color: white;
+    color: rgb(3, 3, 3);
+    border-color: #f8c262;
 }
 .input ::placeholder{
-    color: white;
+    color: rgb(12, 12, 12);
 }
 .input input:focus::placeholder{
     color:black;
 }
 .input input:focus{
-    background-color: rgb(95, 48, 48);
+    background-color: rgba(150, 132, 33, 0.397);
 }
 .btnOkContainer{
-    width: 100vw;
     display: flex;
     align-content: center;
-    margin-top: 5vh;
+    margin-top: 4vh;
+    text-align: center;
 }
+
+.btnOkContainer button:hover{
+    background-color: rgb(187, 187, 187);
+}
+
 .btnOkContainer button{
+    /* padding-left: 12%; */
+    width: 30vw;
+    height: 6vh;
+    text-align: center; 
+    line-height: 6vh;
+    color: rgb(36, 35, 35);
     margin: 0 auto;
-    color: rgb(184, 0, 0);
     border: none;
     outline: none;
     display: flex;
-    background-color: rgb(255, 255, 255);
-    font-size: 10vw;
-    font-weight: bold;
-    border-radius: 20px;
+    background-color: rgba(155, 155, 155, 0.336);
+    font-size: 20px;
+    border-radius: 4px;
     cursor: pointer;
+}
+
+.login{
+    margin: 0 auto;
+}
+.note{
+    display: flex;
+    margin: 0 auto;
+    margin-top: 4vh;
+    color: #949494;
 }
 
 </style>
