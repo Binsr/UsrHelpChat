@@ -89,6 +89,7 @@ export default {
 
 <style>
 
+
 .clearfix::after{
   content: '';
   clear: both;

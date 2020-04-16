@@ -4,22 +4,16 @@
           <img src="../assets/mainlogo.jpg"/>
         </div>
         <div class="title">
-            <div class="titleFSpart"> Friend - Sheep </div>
+            <div class="titleFSpart">Live help center</div>
           <div class="areaPart">App</div>
-        </div>
-        <div class="wifiContainer">
-            <img class="wifiImg" src="../assets/wifi.png"/>
         </div>
       <div>
           <div class="inputContainer">
-            <div class="writingTextContainter">
-                <p id="poptext">Unesite ime koje ce biti vidljivo samo u cetu</p>
-            </div>
             <div class="input">
                     <input type="text" v-model="name" @keyup.enter="submitName" placeholder="~~~Ime~~~">
             </div>
             <div class="btnOkContainer">
-                <button @click="submitName">Next</button>
+                <button @click="submitName">Login</button>
             </div>
           </div>
       </div>
@@ -81,7 +75,7 @@ export default {
 .popupContainer{
     width: 100vw;
     height: 100vh;
-    background-color: rgb(179, 77, 29);
+    background-color: white;
     border-style: solid; 
     border-color: white;
 }
@@ -99,7 +93,7 @@ export default {
 }
 
 .titleFSpart{
-  color: #fff;
+  color: rgb(167, 167, 167);
   text-shadow: 2px 2px #fff;
 }
 
@@ -114,9 +108,8 @@ export default {
     flex-direction: column;
 }
 
-
 .titleFSpart {
-  color: rgb(255, 255, 255);
+  color: rgb(121, 121, 121);
   letter-spacing: 3px;
   font-family: "Bangers", cursive;
   text-shadow: 2px 2px black;
@@ -125,11 +118,7 @@ export default {
   color: rgb(255, 255, 255);
   text-shadow: 2px 2px rgb(255, 255, 255);
 }
-.wifiImg{
-    width: 50vw;
-    height: 50vw;
-    margin: 0 auto;
-}
+
 .wifiContainer{
     display: flex;
     width: 100vw;
@@ -154,9 +143,10 @@ export default {
 .input input{
     width: 40vw;
     height: 6vh;
-    background-color: rgb(0, 0, 0);
-    border-radius: 20px;
+    background-color: rgb(158, 147, 147);
+    border-radius: 10px;
     text-align: center;   
+    color: white;
 }
 .input ::placeholder{
     color: white;
@@ -165,23 +155,12 @@ export default {
     color:black;
 }
 .input input:focus{
-    border-color: gray;
-    margin-top: 10vh;
-    width: 100vw;
-    height: 100vh;
-    font-size: 20px;
-    background-color: black;
-    color: white;
-    z-index: 2;
-    position: fixed;
-    bottom: 0;
-    left:0;
+    background-color: rgb(95, 48, 48);
 }
 .btnOkContainer{
     width: 100vw;
     display: flex;
     align-content: center;
-    transform: rotate(-20deg);
     margin-top: 5vh;
 }
 .btnOkContainer button{
