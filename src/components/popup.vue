@@ -71,13 +71,28 @@ export default {
 </script>
 
 <style>
+body{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    margin: 0;
+    padding: 0
+}
+
+
 .popupContainer{
     width: 100vw;
     height: 100vh;
     background-color: white;
     border-style: solid; 
     border-color: white;
-    background-image: url('./../assets/bak.jpg');
+    background-image: url('./../assets/bak6.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow:hidden;
 }
 .log-container{
     display: flex;
@@ -86,7 +101,7 @@ export default {
     margin: 0 auto;
     margin-top: 13%;
     flex-direction: column;
-    background-color: #000000a8;
+    background-color: #000000d0;
     box-shadow: 1px 1px rgb(100, 100, 100);
     border-width: 1px;
     border-style: solid;
@@ -137,6 +152,11 @@ export default {
     color: rgb(3, 3, 3);
     border-color: #f8c262;
 }
+
+.input input::placeholder{
+    color: white;
+}
+
 .input ::placeholder{
     color: rgb(12, 12, 12);
 }

@@ -1,25 +1,13 @@
 
 <template>
-  <div class="tatko">
-    <div class="headerText"> <!--TextType -->
-      <div class="headerTextContainer">
-        <p>#</p>
-        <p id="text">F-S "get to know" Area</p>
-      </div>
-    </div>
-    <div class="imagesContainer">
-      <cafeList :caffes="caffeNames" class="cafeList" v-if="showCaffeList" @update="showCaffeList = false"></cafeList>
-      <div v-for="(image,index) in images" v-bind:key="index" >
-       <img class="images" :src='imagesBuild(image.slika)'>
-       <p class="tagovi">{{image.tag}}</p>
-      </div>
-    </div>
-      <div class="btnContainer">
-        <button class="chatBtn" @click="toChatPage"><p class="btParagraf" id="clickme">Chat</p>
-        </button>
-        <button class="meniBtn" @click="this.showCaffes"><p class="btParagraf">List of F-S Areas</p>
-      </button>
-      </div>
+  <div class="Container">
+        <div class="terms-of-use">
+          <p>Terms of use</p>
+          <div class="term-text">
+            <p>Some shit people need to accept</p>
+          </div>
+          <button class="chatBtn" @click="toChatPage"><p class="btParagraf" id="clickme">Accept</p></button>
+        </div>
   </div>
 </template>
 
@@ -90,87 +78,56 @@ export default {
 <style>
 
 
-.clearfix::after{
-  content: '';
-  clear: both;
-  display: block;
-  height: 1px;
-  visibility: hidden;
-}
-.tatko{
+.terms-of-use{
+  background-color: rgba(59, 64, 80, 0.514);
   display: flex;
-  background-color: rgb(0, 0, 0);
+  width: 40%;
+  min-width: 300px;
+  min-height: 300px;
+  margin: 0 auto;
+  margin-top: 10%;
+  flex-direction: column;
+  box-shadow: 1px 1px rgb(100, 100, 100);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #f8c262;
+  position: relative;
 }
 
-.headerText {
-  display: flex;
-  width: 100vw;
-  background-color: rgb(179, 77, 29);
-  border-style: solid;
-  border-color: white;
-  border-width: 0 0 3px 0;
-  top: 0;
-  position: fixed;
-  z-index: 1;
-  color:white;
-    font-family: "Bangers", cursive;
-  font-size: 20px;
-}
-.headerTextContainer{
+.term-text{
+  width: 400px;
+  height: 200px;
+  background-color:rgba(255, 255, 255, 0.349);
   margin: 0 auto;
-  display: flex;
-  flex-direction: row;
 }
-.imagesContainer{
-  display: flex;
-  align-content: center;
-  flex-direction: column;
- /* TESTIRAJ NA CHAT PAGE ZA  CHAT DA SE OSIGURAS  */
-  margin: 15vh auto 15vh auto;
+
+.Container{
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    border-style: solid; 
+    border-color: white;
+    background-image: url('./../assets/bak6.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow:hidden;
+    
 }
-.images{
-  display: block;
-  width: 80vw;
-  height: 60vh;
-}
-.tagovi{
-  color: white;
-  font-size: 15px;
-  text-align: left;
-}
-.btnContainer{
-  display: flex;
-  flex-direction: row;
-  position: fixed;
-  bottom: 0;
-  text-align: center;
-  background-color: rgb(179, 77, 29);
-}
+
 .chatBtn {
-  width: 50vw;
-  height: 10vh;
-  font-size: 30px;
-  color: white;
-  background-color: rgba(255, 255, 255, 0);
-  border-color: rgb(255, 255, 255);
-  text-align: center;
-  font-family: "Bangers", cursive;
-  border-right-style: solid;
-  border-width: 3px 3px 0 0;
+  width: 100px;
+  height: 40px;
+  color: #f8c262;
+  margin-left: 8px;
+  margin-bottom: 5px;
+  background-color:rgba(255, 255, 255, 0.349);
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  border-width: 0;
 }
-.meniBtn{
-  width: 50vw;
-  height: 10vh;
-  font-size: 25px;
-  background-color: rgba(255, 255, 255, 0);
-  border-width: 3px 0 0 0;
-  border-color: white;
-  color: rgb(255, 255, 255);
-  font-family: "Bangers", cursive;
-}
-.btParagraf{
-  margin: 0 auto;
-}
+
 
 
 </style>
