@@ -93,13 +93,13 @@ export default {
     width: 100vw;
     height: 100vh;
     background-color: white;
-    border-style: solid; 
-    border-color: white;
     background-image: url('./../assets/bak6.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
     overflow:hidden;
+    padding: 0;
+    border-width: 0;
     
 }
 

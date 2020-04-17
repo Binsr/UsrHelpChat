@@ -85,7 +85,7 @@ html{
 .popupContainer{
     width: 100vw;
     height: 100vh;
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     border-style: solid; 
     border-color: white;
     background-image: url('./../assets/bak6.jpg');
@@ -93,6 +93,8 @@ html{
     background-repeat: no-repeat;
     background-position: center;
     overflow:hidden;
+    border-width: 0;
+    padding: 0;
 }
 .log-container{
     display: flex;
@@ -151,6 +153,7 @@ html{
     text-align: center;   
     color: rgb(3, 3, 3);
     border-color: #f8c262;
+    font-size: 1rem;
 }
 
 .input input::placeholder{

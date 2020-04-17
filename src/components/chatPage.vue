@@ -288,6 +288,9 @@ body{
     height: 100vh;
     width: 100vw;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
 }
 .chatWrap{
     width: 100%;
@@ -540,7 +543,7 @@ body{
   background-repeat: no-repeat;
   background-position: center;
   overflow:hidden;
-
+  border-width: 0;
   display: block;
   height: 100%;
   width: 100vw;

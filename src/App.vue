@@ -56,6 +56,8 @@ body{
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  overflow: hidden;
+  background-color: black;
 }
 .wholePage{
   width: 100vw;
