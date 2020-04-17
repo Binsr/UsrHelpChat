@@ -22,8 +22,6 @@ export default {
     props: ['caffes'],
     data(){
         return{
-            testa: "da",
-            listOfCaffes: ["","Ledenko","Topli Caffe","Ledeni Udar","Nebeska Munja","Bugarski trotinet","Leteci Kolac","Ugrejana Pritka","Svecnjak"]
         }
     },
 

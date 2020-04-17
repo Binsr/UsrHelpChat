@@ -18,6 +18,7 @@ import router from "../router.js"
 import api from '../api'
 import { mapState, mapActions } from "vuex"
 import cafeList from './cafeList.vue'
+import store from '../store'
 
 export default {
     components: {
@@ -26,6 +27,9 @@ export default {
     data() {
       return{
       }
+    },
+    computed : {
+        ...mapState(['messages','user','client'])
     },
     methods: {
       ...mapActions(['addUsername','client']),
@@ -90,17 +94,23 @@ export default {
 }
 
 .Container{
-    width: 100vw;
-    height: 100vh;
-    background-color: white;
-    background-image: url('./../assets/bak6.jpg');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    overflow:hidden;
-    padding: 0;
-    border-width: 0;
-    
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  border-style: solid; 
+  border-color: white;
+  background-image: url('./../assets/bak6.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow:hidden;
+  border-width: 0;
+  display: block;
+  height: 100%;
+  width: 100vw;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .chatBtn {

@@ -462,9 +462,7 @@ body{
 .chatWrap::-webkit-scrollbar-track{
   background-color: black;
   margin-right: 20vw;
-  color:black
 }
-
 
 .inputWrap button{
     /* display: none; */

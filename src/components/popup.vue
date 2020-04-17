@@ -83,18 +83,23 @@ html{
 
 
 .popupContainer{
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(0, 0, 0);
-    border-style: solid; 
-    border-color: white;
-    background-image: url('./../assets/bak6.jpg');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    overflow:hidden;
-    border-width: 0;
-    padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  border-style: solid; 
+  border-color: white;
+  background-image: url('./../assets/bak6.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow:hidden;
+  border-width: 0;
+  display: block;
+  height: 100%;
+  width: 100vw;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .log-container{
     display: flex;
