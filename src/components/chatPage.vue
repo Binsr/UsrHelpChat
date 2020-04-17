@@ -452,8 +452,20 @@ body{
   border-style:solid;
   overflow-y: scroll;
   display: flexbox;
+  scrollbar-arrow-color: black;
   /* flex-direction: column; */
 }
+.ChatWindow::-webkit-scrollbar-track{
+  background-color: black;
+  margin-right: 20vw;
+}
+.chatWrap::-webkit-scrollbar-track{
+  background-color: black;
+  margin-right: 20vw;
+  color:black
+}
+
+
 .inputWrap button{
     /* display: none; */
     width: 29px;
