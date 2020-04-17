@@ -50,6 +50,10 @@ export default {
 textarea:focus, input:focus, button:focus{
     outline: none;
 }
+html{
+  font-size: 18px;
+}
+
 body{
   width: 100vw;
   height: 100vh;

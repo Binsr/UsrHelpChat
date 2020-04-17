@@ -1,13 +1,14 @@
 <template>
     <div class="popupContainer">
         <div class="log-container">
+            <div class="logo"></div>
             <div class="title">
                 <div class="titleFSpart">Live info chat</div>
             </div>
             <div class="note">Some text about company!</div>
             <div class="inputContainer">
                 <div class="input">
-                    <input type="text" v-model="name" @keyup.enter="submitName" placeholder="Enter your name please">
+                    <input type="text" v-model="name" @keyup.enter="submitName" placeholder="Enter your name">
                 </div>
                 <div class="btnOkContainer">
                     <button @click="submitName">
@@ -80,7 +81,12 @@ html{
     margin: 0;
     padding: 0
 }
-
+.logo{
+    background-image: url('./../assets/logo.png');
+    background-size: contain;
+    width:100px;
+    height: 100px;
+}
 
 .popupContainer{
   width: 100vw;
@@ -103,10 +109,11 @@ html{
 }
 .log-container{
     display: flex;
-    width: 40%;
+    width: 60%;
+    max-width: 600px;
     min-width: 300px;
     margin: 0 auto;
-    margin-top: 13%;
+    margin-top: 10%;
     flex-direction: column;
     background-color: #000000d0;
     box-shadow: 1px 1px rgb(100, 100, 100);
@@ -122,22 +129,12 @@ html{
 .title {
     display: flex;
     text-align: center;
-    font-size: 6vw;
+    font-size: 3rem;
     margin: 0 auto;
     flex-direction: column;
     margin-top: 3vh;
     color:#f8c262;
 }
-
-.titleFSpart {
-  letter-spacing: 3px;
-  font-size: 40px;
-}
-.areaPart {
-  color: rgb(255, 255, 255);
-  text-shadow: 2px 2px rgb(255, 255, 255);
-}
-
 
 /* ----------------------------------*/
 .inputContainer{
@@ -152,13 +149,16 @@ html{
 }
 .input input{
     width: 30vw;
+    min-width: 200px;
+    max-width: 320px;
     height: 6vh;
+    max-height: 40px;
     background-color: rgba(0, 0, 0, 0.288);
     border-radius: 5px;
     text-align: center;   
     color: rgb(3, 3, 3);
     border-color: #f8c262;
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
 .input input::placeholder{
@@ -179,6 +179,7 @@ html{
     align-content: center;
     margin-top: 4vh;
     text-align: center;
+    max-height: 40px;
 }
 
 .btnOkContainer button:hover{
@@ -187,29 +188,89 @@ html{
 
 .btnOkContainer button{
     /* padding-left: 12%; */
-    width: 30vw;
-    height: 6vh;
+
+
     text-align: center; 
-    line-height: 6vh;
+    line-height: 40px;
     color: rgb(36, 35, 35);
     margin: 0 auto;
     border: none;
     outline: none;
     display: flex;
     background-color: rgba(155, 155, 155, 0.336);
-    font-size: 20px;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 1.5rem;
 }
 
 .login{
+    width: 30vw;
+    height: 6vh;
     margin: 0 auto;
+    max-height: 40px;
+    min-width: 180px;
+    max-width: 300px;
 }
 .note{
+    font-size: 0.9rem;
     display: flex;
     margin: 0 auto;
     margin-top: 4vh;
     color: #949494;
 }
+
+
+@media screen and (max-width: 500px){
+:root{
+    font-size: 6px;
+    }
+
+}
+@media screen and (max-width: 570px){
+  :root{
+    font-size: 7px;
+  }
+}
+@media screen and (max-width: 620px){
+:root{
+    font-size: 8px;
+  }
+}
+@media screen and (max-width: 680px){
+:root{
+    font-size: 9px;
+}
+}
+@media screen and (max-width: 720px){
+:root{
+    font-size: 12px;
+  }
+.log-container{
+        width: 98%;
+        height: 70%;
+    }
+}
+@media screen and (max-width: 800px){
+:root{
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 860px){
+:root{
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 920px){
+  html{
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 1000px){
+:root{
+    font-size: 14px;
+  }
+  
+}
+
 
 </style>
