@@ -2,7 +2,7 @@
 <template>
   <div class="Container">
         <div class="terms-of-use">
-          <p>Terms of use</p>
+          <p class="welcome_para">Welcome, {{" " +this.user.name}} please accept terms of use </p>
           <div class="term-text">
             <p>Some shit people need to accept</p>
           </div>
@@ -71,24 +71,32 @@ export default {
 
 
 .terms-of-use{
-  background-color: rgba(59, 64, 80, 0.514);
   display: flex;
-  width: 40%;
+  width: 60%;
+  max-width: 500px;
   min-width: 300px;
   min-height: 300px;
   margin: 0 auto;
   margin-top: 10%;
   flex-direction: column;
+  background-color: #000000d0;
   box-shadow: 1px 1px rgb(100, 100, 100);
   border-width: 1px;
   border-style: solid;
   border-color: #f8c262;
-  position: relative;
+}
+
+.welcome_para{
+  color: white;
 }
 
 .term-text{
-  width: 400px;
-  height: 200px;
+  width: 80%;
+  max-width: 400px;
+  min-width: 200px;
+  min-height: 200px;
+  margin: 0 auto;
+  margin-top: 5%;
   background-color:rgba(255, 255, 255, 0.349);
   margin: 0 auto;
 }
@@ -114,24 +122,36 @@ export default {
 }
 
 .chatBtn {
-  width: 100px;
-  height: 40px;
+  width: 17%;
+  height: 10%;
+  min-width: 80px;
+  min-height: 40px;
   color: #f8c262;
-  margin-left: 8px;
-  margin-bottom: 5px;
+  margin: 0 auto;
   background-color:rgba(255, 255, 255, 0.349);
   border-radius: 5px;
-  position: absolute;
-  bottom: 0;
   border-width: 0;
 }
+
 .chatBtnContainer{
   display: flex;
-}
-.chatBtnContainer :hover{
-  background-color: rgb(0, 0, 0);
+  width:100%;
+  margin: 3px 0 3px 0;
 }
 
+.chatBtnContainer :hover{
+  background-color: rgb(155, 129, 129);
+}
+
+@media screen and (max-width: 720px){
+:root{
+    font-size: 12px;
+  }
+.terms-of-use{
+        width: 98%;
+        height: 50%;
+    }
+}
 
 
 </style>

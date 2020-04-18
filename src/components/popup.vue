@@ -144,6 +144,7 @@ html{
     width: 60%;
     max-width: 500px;
     min-width: 300px;
+    min-height: 300px;
     margin: 0 auto;
     margin-top: 10%;
     flex-direction: column;

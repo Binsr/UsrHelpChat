@@ -296,15 +296,15 @@ body{
     width: 100%;
 }
 .chatIcon{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: rgba(53, 53, 53, 0.753);
-    align-self: flex-start;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+
     margin: 10px 0 10px 10px;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    background-image: url('./../assets/logo.png');
 }
 .chatIcon2{
     width: 60px;
@@ -561,5 +561,32 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+@media screen and (max-width: 720px){
+.background{
+   background-image: none;
+   background-color: rgb(34, 27, 27);
+}
+div.singleMessageDiv.new-user{
+    width: 95vw;
+    margin: 2.5vw;
+}
+div.singleMessageDiv.my-message{
+    margin-right: 0;
+}
+.singleMessageDiv{
+    margin-left: 0;
+}
+.inputOMEGAWrap{
+    width: 80vw;
+    margin-left: 10vw;
+}
+.headChat{
+  width: 95vw;
+  margin-left: 2.5vw;
+}
+
+}
+
 
 </style>
