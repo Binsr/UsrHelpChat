@@ -15,6 +15,7 @@ import api from './api'
 import store from './store'
 import { mapState, mapActions } from "vuex"
 
+
 export default {
   data(){
     return{

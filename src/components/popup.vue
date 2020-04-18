@@ -1,18 +1,19 @@
 <template>
-    <div class="popupContainer">
-        <div class="log-container">
-            <div class="logo"></div>
+    <div class="popupContainer" id="container" @mouseover="updateElts">
+        <div class="log-container" id="log-container">
             <div class="title">
                 <div class="titleFSpart">Live info chat</div>
             </div>
             <div class="note">Some text about company!</div>
             <div class="inputContainer">
+            
                 <div class="input">
-                    <input type="text" v-model="name" @keyup.enter="submitName" placeholder="Enter your name">
+                    <input id="name_input" type="text" v-model="name" @keyup.enter="submitName" @focus="mobileShow" placeholder="Enter your name">
                 </div>
-                <div class="btnOkContainer">
-                    <button @click="submitName">
-                        <div class="login" >Login</div>
+            
+                <div class="btnOkContainer" id="logbtn">
+                    <button id="login_button" @click="submitName">
+                        <div class="login" id="login_div">Login</div>
                     </button>
                 </div>
             </div>
@@ -22,14 +23,21 @@
 <script>
 import {mapActions, mapState} from 'vuex';
 import router from '../router';
-import api from '../api'
+import api from '../api';
+import VueTouch from 'vue-touch';
 import { setTimeout, clearInterval } from 'timers';
+
 
 export default {
     data(){
         return {
             name: '',
-            typingAllowed: true
+            typingAllowed: true,
+            is_keyboard: false,
+            initial_screen_size: null,
+            input_height: null,
+            login_button_height: null,
+            login_div_height: null
         }
     },
     computed:{
@@ -45,6 +53,23 @@ export default {
                     this.typingAllowed = false;
                 }
                 router.push('/firstpage')
+            },
+            isPcF(){
+                this.isPc= true;
+                console.log("aaaaa");
+            },
+            updateElts(){
+                let log = document.getElementById('login_div');
+                let height = log.clientHeight;
+                log.style.lineHeight = height + 'px';
+            },
+            mobileShow(){
+                console.log("Promenio");
+                let ni = document.getElementById("name_input") 
+                let stri= this.input_height + "px";
+                document.getElementById('login_div').style.height = this.login_div_height + 'px';
+                document.getElementById('login_button').style.height= this.login_button_height + 'px';
+                ni.style.height= stri;
             },
             typing(poruka) {
                 let text = poruka;
@@ -67,6 +92,12 @@ export default {
             },
         },
     mounted(){
+        console.log(this.initial_screen_size);
+        this.input_height = document.getElementById('name_input').clientHeight;
+        this.initial_screen_size = document.getElementById('log-container').clientHeight;
+        this.login_button_height = document.getElementById('login_button').clientHeight;
+        this.login_div_height = document.getElementById('login_div').clientHeight;
+        this.updateElts();
     }
 }
 </script>
@@ -84,6 +115,7 @@ html{
 .logo{
     background-image: url('./../assets/logo.png');
     background-size: contain;
+    background-repeat: no-repeat;
     width:100px;
     height: 100px;
 }
@@ -110,7 +142,7 @@ html{
 .log-container{
     display: flex;
     width: 60%;
-    max-width: 600px;
+    max-width: 500px;
     min-width: 300px;
     margin: 0 auto;
     margin-top: 10%;
@@ -189,9 +221,7 @@ html{
 .btnOkContainer button{
     /* padding-left: 12%; */
 
-
     text-align: center; 
-    line-height: 40px;
     color: rgb(36, 35, 35);
     margin: 0 auto;
     border: none;
@@ -206,8 +236,9 @@ html{
 .login{
     width: 30vw;
     height: 6vh;
-    margin: 0 auto;
+    margin: auto auto;
     max-height: 40px;
+    min-height: 30px;
     min-width: 180px;
     max-width: 300px;
 }

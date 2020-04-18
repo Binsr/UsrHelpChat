@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import api from './api'
 import router from './router'
+import VueTouch from 'vue-touch';
+
 
 Vue.use(Vuex)
 const store = new Vuex.Store({
