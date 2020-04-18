@@ -1,15 +1,9 @@
 <template>
 <div class="background">
   <div class="tatkoNaMafiu">
-    <div class="physicallyBodyOfHeader">
-      <div class="chatIcon2"></div>
-    </div>
     <div class="headChat">
       <div class="topHead">
-        <div class="chatIcon"></div>
-        <div class="roomWrap">
-          <p class="roomName">Some company chat room</p>
-        </div>
+        <div class="chatIcon" id= "logo"></div>
       </div>
     </div>
     <div class="chatWrap">
@@ -29,6 +23,7 @@
           </div>
           </div>
         <div class="singleMessageDiv invis"></div>
+        <div class="chat_window_space"></div>
         <div class="scrollDownButton" @click="scrollToEnd" v-if="!user.scrolled">
             <i class="material-icons">keyboard_arrow_down</i>
         </div>
@@ -59,7 +54,8 @@ export default {
             userChat: {
               sid: null,
               name: null
-            }
+            },
+            logo_height: null
         }
     },
     name: 'chatPage',
@@ -76,6 +72,12 @@ export default {
             // console.log(container);
             container.scrollTop = container.scrollHeight - 55;
             this.user.scrolled = true;
+            this.resetSizes();
+        },
+        resetSizes(){
+          let logo= document.getElementById('logo');
+          logo.style.height= this.logo_height + 'px';
+          logo.style.width= this.logo_height + 'px';
         },
         submit() {
             let time = new Date();
@@ -192,6 +194,8 @@ export default {
       this.windowSize();
     },
     mounted () {
+      this.logo_height = document.getElementById('logo').clientHeight;
+      console.log(this.logo_height)
       console.log('xddd')
       this.message = this.addedMessages;
       if(this.user.name != null){
@@ -217,6 +221,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.chat_window_space{
+  width: 100%;
+  height: 14px;
+}
+
+.chatTop{
+  height: 10vh;
+  min-height: 60px;
+  width: 100%;
+}
 .scrollDownButton {
     animation: MoveUpDown 1s ease-in-out infinite;
     cursor: pointer;
@@ -296,25 +310,16 @@ body{
     width: 100%;
 }
 .chatIcon{
-    width: 50px;
-    height: 50px;
-    padding: 10px;
-
-    margin: 10px 0 10px 10px;
+    
+    width: 10vh;
+    height: 10vh;
+    min-height: 50px;
+    min-width: 50px;
+    margin: 0 auto;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     background-image: url('./../assets/logo.png');
-}
-.chatIcon2{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    align-self: flex-start;
-    margin: 10px 0 10px 10px;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
 }
 
 
@@ -325,16 +330,17 @@ body{
     display: flex;
     flex-direction: column;
     width: 50vw;
+    height: 10vh;
+    min-height: 60px;
     background-color: rgb(65, 62, 62);
-    border-color: rgb(92, 0, 0);
-    border-width: 1.5px;
+    border-color: rgb(156, 173, 1);
+    border-width: 2px;
     margin-left: 25vw;
     margin-bottom: 10vw;
 }
 
 .topHead{
     display: flex;
-    align-items: flex-start;
     margin: 0 auto;
 }
 .botHead{
@@ -358,7 +364,8 @@ body{
 }
 .inputOMEGAWrap{
     position: fixed;
-    bottom: 10px;
+    bottom: 0;
+    margin-bottom: 2vh;
     width: 50vw;
     display: flex;
     justify-content: center;
@@ -441,13 +448,13 @@ body{
   align-content: center;
   display: inline-block;
   color: white;
-  height: 80vh;
-  margin-top:2vh;
+  /* height: 81.5vh; */
+  margin-top: 10vh;
 }
 .ChatWindow{
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 82vh;
   border-width: 0px;
   border-style:solid;
   overflow-y: scroll;
@@ -582,8 +589,8 @@ div.singleMessageDiv.my-message{
     margin-left: 10vw;
 }
 .headChat{
-  width: 95vw;
-  margin-left: 2.5vw;
+  width: 99%;
+  margin-left: 0;
 }
 
 }
