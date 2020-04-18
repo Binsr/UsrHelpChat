@@ -185,6 +185,7 @@ html{
     max-width: 320px;
     height: 6vh;
     max-height: 40px;
+    min-height: 30px;
     background-color: rgba(0, 0, 0, 0.288);
     border-radius: 5px;
     text-align: center;   
@@ -212,6 +213,7 @@ html{
     margin-top: 4vh;
     text-align: center;
     max-height: 40px;
+    min-height: 30px;
 }
 
 .btnOkContainer button:hover{
@@ -278,7 +280,7 @@ html{
   }
 .log-container{
         width: 98%;
-        height: 70%;
+        height: 60%;
     }
 }
 @media screen and (max-width: 800px){
