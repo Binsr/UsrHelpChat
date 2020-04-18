@@ -325,7 +325,7 @@ body{
     display: flex;
     flex-direction: column;
     width: 50vw;
-    background-color: rgba(65, 62, 62, 0.63);
+    background-color: rgb(65, 62, 62);
     border-color: rgb(92, 0, 0);
     border-width: 1.5px;
     margin-left: 25vw;
